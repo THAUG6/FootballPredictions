@@ -1,2 +1,2 @@
 # FootballPredictions
-Code python pour automatiser les prédictions de football 
+Python code to get nfl games results and show stats for predictions.
