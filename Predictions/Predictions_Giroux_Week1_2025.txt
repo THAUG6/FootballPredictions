@@ -1,0 +1,16 @@
+Game: DAL at PHI, Predicted Winner: DAL, Predicted Score: 25-20
+Game: KC at LAC, Predicted Winner: KC, Predicted Score: 25-20
+Game: TB at ATL, Predicted Winner: TB, Predicted Score: 25-20
+Game: CIN at CLE, Predicted Winner: CLE, Predicted Score: 25-20
+Game: MIA at IND, Predicted Winner: MIA, Predicted Score: 25-20
+Game: CAR at JAX, Predicted Winner: CAR, Predicted Score: 25-20
+Game: LV at NE, Predicted Winner: LV, Predicted Score: 25-20
+Game: ARI at NO, Predicted Winner: NO, Predicted Score: 25-20
+Game: PIT at NYJ, Predicted Winner: PIT, Predicted Score: 25-20
+Game: NYG at WAS, Predicted Winner: WAS, Predicted Score: 25-20
+Game: TEN at DEN, Predicted Winner: TEN, Predicted Score: 25-20
+Game: SF at SEA, Predicted Winner: SF, Predicted Score: 25-20
+Game: DET at GB, Predicted Winner: DET, Predicted Score: 25-20
+Game: HOU at LAR, Predicted Winner: HOU, Predicted Score: 25-20
+Game: BAL at BUF, Predicted Winner: BAL, Predicted Score: 25-20
+Game: MIN at CHI, Predicted Winner: MIN, Predicted Score: 25-20

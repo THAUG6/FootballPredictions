@@ -2,6 +2,18 @@ from APIClass import *
 import os
 import pandas as pd
 from enum import Enum
+import questionary
+from prompt_toolkit.styles import Style
+
+custom_style = Style([
+    ("qmark", "fg:#FFA500 bold"),       # ? mark
+    ("question", "fg:#00FF00 bold"),    # question text
+    ("answer", "fg:#FFD700 bold"),      # submitted answer text
+    ("pointer", "fg:#FF4500 bold"),     # pointer that highlights choices
+    ("highlighted", "fg:#1E90FF bold"), # highlighted choice
+    ("selected", "fg:#FF69B4"),         # checked/selected item for multi-select
+])
+
 
 def validate_request(txt : str):
     os.system('')  # Enables ANSI escape characters in terminal (Windows)
@@ -15,6 +27,16 @@ def validate_request(txt : str):
             invalid = False
     print('\033[0m', end='')  # Reset text to normal before confirmation input
     return val
+
+def username():
+    usernames = ["Giroux", "ThomPere", "Chevito", "Beli"]
+    user_name = questionary.select(
+        "Select your username:",
+        choices=usernames,
+        style=custom_style
+    ).ask()
+    return user_name
+
 
 def request(txt : str):
     val = input(f"\033[1m\033[4m\033[38;5;226m{txt}\033[95m")
@@ -39,7 +61,7 @@ def validate_score(score):
 
 if __name__ == "__main__":
 
-    user_name = validate_request("Input Username: ")
+    user_name = username()
     
     current_season = request("Input Season: ")
 
@@ -49,7 +71,10 @@ if __name__ == "__main__":
     nflScoresByWeek = NFLApi(scores_key)
     scoresByWeek = nflScoresByWeek.get_scores_by_week(current_season, current_week)
 
-    log_file = open(f"Predictions_{user_name}_Week{current_week}_{current_season}.txt", "w")
+    folder_name = "Predictions"
+    os.makedirs(folder_name, exist_ok=True)
+    log_file_path = os.path.join(folder_name, f"Predictions_{user_name}_Week{current_week}_{current_season}.txt")
+    log_file = open(log_file_path, "w")
         
     for _, game in scoresByWeek.iterrows():
         print(f"Game \033[95m{game["AwayTeam"]}\033[0m at \033[95m{game["HomeTeam"]}\033[0m")
